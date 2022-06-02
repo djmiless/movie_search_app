@@ -62,3 +62,32 @@
 	padding: 20px;
 	text-align: center;
 }
+
+.butt:hover {
+background-color: brown;
+
+}
+
+.butt {
+  color: white;
+  background-color: #282c34;
+}
+
+
+.cart {
+  cursor: pointer;
+  margin-right: 25px;
+}
+.cart span:nth-child(1) {
+  font-size: 2rem;
+  color: white;
+}
+.cart span:nth-child(2) {
+  padding: 0 3px;
+  background-color: red;
+  color: white;
+  font-weight: bolx;
+  border-radius: 5px;
+  position: relative;
+  top: -15px;
+}
