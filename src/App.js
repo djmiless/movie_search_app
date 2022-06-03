@@ -57,20 +57,11 @@ function App() {
     
   }
 
-  // let localStorePush
-  // let cartMovie = []
-  // function cartClick(index){
-  //   console.log(movie[index])
-  //   /// console.log(cartMovie.push(movie[index]))
-  //   localStorePush = cartMovie.push(movie[index])
-  //  localStorePush = localStorage.setItem('carter', JSON.stringify(cartMovie))
-  
-  // }
 
   function loadCart (index){
-    
-    
   }
+
+
 
   function addToCollection(index){
       //add this movie to collection
@@ -84,8 +75,6 @@ function App() {
         
         setCollection(collectionStorage);
 
-        
-
         //save the collection to localStorage
         
       }else{
@@ -98,12 +87,16 @@ function App() {
         localStorage.setItem("collection-storage", JSON.stringify(collectionStorage));
 
         setCollection(collectionStorage);
-
-
-        
-
       }
+  }
 
+  function removeFromCollection(index){
+    let collectionStorage = JSON.parse(localStorage.getItem("collection-storage"));
+      for (let i = 0; i < collectionStorage.length; i++){
+       if(currentCollection.length){
+        console.log(collectionStorage)
+       } 
+      }
 
   }
 
@@ -145,7 +138,7 @@ function App() {
         {movie ? <div className='row'>
           {
             movie.map((value, index) => {
-              console.log("All movies: ", movie)
+              // console.log("All movies: ", movie)
               //check the localStorage
               collectionStorage = localStorage.getItem("collection-storage");
               let addOrRemoveBtn;
@@ -164,7 +157,7 @@ function App() {
                 }
 
                 if(matchesFound.length > 0){
-                  addOrRemoveBtn = <button className='m-2 butt'>Remove from Collections</button>
+                  addOrRemoveBtn = <button className='m-2 butt' onClick={() => removeFromCollection(index)}>Remove from Collections</button>
                 }else{
                   addOrRemoveBtn = <button className='m-2 butt' onClick={() => addToCollection(index)}>Add to Collections</button>
                 }
